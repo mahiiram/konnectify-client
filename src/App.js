@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import UserLogin from "./Component/User/Login.js";
+import { useSelector } from "react-redux";
+import UserRegister from "./Component/User/Register.js";
+import UserProfile from "./Pages/Profile/UserProfile.js";
+import { AuthorizeUser } from "./middleware/auth.js";
+
+const router = createBrowserRouter([
+  {
+    path:"/",
+    element:<div><UserLogin /></div>
+  },
+  {
+    path:"/register",
+    element:<div><UserRegister/></div>
+  },
+  {
+    path:"/userprofile",
+    element:<AuthorizeUser><UserProfile/></AuthorizeUser>
+  }
+])
 
 function App() {
+  const isUserloggedin = useSelector(state => state.user.isLoggedIn);
+  console.log("isUserloggedin",isUserloggedin)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <RouterProvider router={router}>
+
+      </RouterProvider>
+    </main>
   );
 }
 
