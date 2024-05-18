@@ -10,8 +10,8 @@ export async function registerUser(credentials){
          password:credentials.password,
       }).catch((err)=>console.log(err))   
       console.log(data)
-      localStorage.setItem('token',data.data.token)
-      return Promise.resolve(data.message)
+    //   localStorage.setItem('token',data.data.token)
+    //   return Promise.resolve(data.message)
 }
 
 
