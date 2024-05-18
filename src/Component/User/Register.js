@@ -12,7 +12,7 @@ function UserRegister() {
     const formik = useFormik({
         initialValues: {
             email: '',
-            name: '',
+            username: '',
             password: '',
         },
         validate: registerValidation,
@@ -49,7 +49,7 @@ function UserRegister() {
                             <label for="exampleInputEmail1" className="form-label" >Email</label>
                             <input {...formik.getFieldProps('email')} placeholder='Enter Email' type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                             <label for="exampleInputEmail1" className="form-label" >Name</label>
-                            <input {...formik.getFieldProps('name')} placeholder='Enter Name' type="text" className="form-control" />
+                            <input {...formik.getFieldProps('username')} placeholder='Enter Username' type="text" className="form-control" />
                             <label for="exampleInputEmail1" className="form-label" >Password</label>
                             <input {...formik.getFieldProps('password')} placeholder='Enter Password' type="password" className="form-control" />
                             <div id="emailHelp" className="form-text">We'll never share your password with anyone else.</div>

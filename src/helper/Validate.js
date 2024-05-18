@@ -43,9 +43,9 @@ const specialChar = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~1234567890]/;
 
 //validate name
 function NameVerify(error={}, values){
-    if(!values.name){
+    if(!values.username){
         error.name = toast.error('User Name Required')
-    }else if(values.name.includes(" ")){
+    }else if(values.username.includes(" ")){
         error.name = toast.error('Invalid User Name')
     }
      return error;
