@@ -9,7 +9,7 @@ function UserProfile() {
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        axios.get('http:localhost:5000/api/getuser', {
+        axios.get('http://localhost:5000/api/getuser', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -31,7 +31,7 @@ function UserProfile() {
                 <div className='userprofile'>
                     <div class="card" style={{width:"18rem",height:"100%"}}>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Name: {user.name}</li>
+                        <li class="list-group-item">Name: {user.username}</li>
                         <li class="list-group-item">Email: {user.email}</li>
                         <li class="list-group-item">gender: {user.gender}</li>
                     </ul>
