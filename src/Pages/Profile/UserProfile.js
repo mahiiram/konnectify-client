@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { userAction } from '../../Store';
+import ImageUpload from './ImageUpload.js';
+
 
 function UserProfile() {
     const [user, setUser] = useState(null);
@@ -28,14 +30,15 @@ function UserProfile() {
     return (
         <div >
             {user ? (
-                <div className='userprofile'>
+                <div>
                     <div class="card" style={{width:"18rem",height:"100%"}}>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Name: {user.username}</li>
                         <li class="list-group-item">Email: {user.email}</li>
-                        <li class="list-group-item">gender: {user.gender}</li>
                     </ul>
                 </div>
+                 <ImageUpload />
+
                 </div>
                 
             ) : (
